@@ -1,0 +1,39 @@
+/* src/styles/Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3B6790; /* Fondo azul medio */
+    padding: 1rem 2rem;
+    color: #EFB036; /* Texto color mostaza */
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+    color: #EFB036; /* Color del logo en mostaza */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #EFB036; /* Color de los enlaces en mostaza */
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-links li a:hover {
+    color: #23486A; /* Hover con azul oscuro */
+  }
+  
+  .cart-icon {
+    color: #4C7B8B; /* Ícono en teal */
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
