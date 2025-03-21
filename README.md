@@ -17,6 +17,20 @@ Libre Express is an e-commerce project for a small technology products store aim
 - Express
 ### DataBase
 - MongoDB
+## Installation
+
+### 1.Clone the repository
+```bash
+git clone https://github.com/Jazi87r/LibreExpress
+```
+### 2. installation of modules for backend and frontend
+```bash
+cd LibreExpress/backend
+npm install
+cd ..
+cd LibreExpress/frontend
+npm install
+```
 ## Collaborators
 - derinson
 - neydercm
