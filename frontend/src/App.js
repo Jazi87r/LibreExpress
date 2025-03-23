@@ -1,17 +1,17 @@
+// src/App.js
+import React from 'react';
+import Navbar from './components/Navbar';
 
-import './App.css';
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-      
-       <h1>Libre Express
-       </h1>
-        
-      </header>
+    <div>
+      <Navbar />
+      <main>
+        <h2>Bienvenido a nuestra tienda</h2>
+        {/* Otras secciones del sitio */}
+      </main>
     </div>
   );
-}
+};
 
 export default App;
