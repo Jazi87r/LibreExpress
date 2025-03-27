@@ -1,27 +1,53 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../styles/login.css'; 
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Login = () => {
-   const [email, setEmail] = useState('');
-   const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-   const handleLogin = async () => {
-      try {
-         const res = await axios.post('http://localhost:5000/api/users/login', { email, password });
-         alert('Inicio de sesión exitoso, token: ' + res.data.token);
-      } catch (err) {
-         alert('Error en el inicio de sesión: ' + err.response.data.message);
-      }
-   };
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('http://localhost:5000/auth/login', {
+        username,
+        password,
+      });
 
-   return (
-      <div>
-         <h2>Iniciar Sesión</h2>
-         <input type="email" placeholder="Correo Electrónico" onChange={(e) => setEmail(e.target.value)} />
-         <input type="password" placeholder="Contraseña" onChange={(e) => setPassword(e.target.value)} />
-         <button onClick={handleLogin}>Iniciar Sesión</button>
-      </div>
-   );
+      
+      alert('Inicio de sesión exitoso. ');
+      navigate('/home'); // Redirige según el tipo de usuario
+    } catch (error) {
+      alert('Error: ' + error.response.data.error);
+    }
+  };
+
+  const handleRegister = async () => {
+    navigate('/register'); // Redirige a registro
+  };
+
+  return (
+    <div className="loginContainer">
+      <h1 className='title'> Iniciar Sesión</h1>
+      <input className='camtex'
+        type="text"
+        placeholder="Usuario"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input className='camtex'
+        type="password"
+        placeholder="Contraseña"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button onClick={handleLogin}className='loginButton' >Iniciar sesión</button>
+      <button onClick={handleRegister} className='registerButton'>Registrate</button>
+    </div>
+  );
 };
 
 export default Login;
