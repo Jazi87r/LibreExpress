@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../styles/register.css'; 
+import { useNavigate } from 'react-router-dom';
+
 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [cedula, setCedula] = useState('');
   const [telefono, setTelefono] = useState('');
   const [password, setPassword] = useState('');
- 
+  const navigate = useNavigate();
 
   const handleRegister = async () => {
     try {
@@ -17,13 +20,14 @@ const Register = () => {
         password,
       });
       alert(response.data.message); // Muestra un mensaje de éxito
+      navigate('/home'); // Ruta para usuarios normales
     } catch (error) {
       alert('Error: ' + error.response.data.error); // Muestra errores
     }
   };
 
   return (
-    <div>
+    <div className="register-container">
       <h1>Registro de Usuario</h1>
       <input
         type="text"
@@ -33,13 +37,13 @@ const Register = () => {
       />
       <input
         type="text"
-        placeholder="Identificacion"
+        placeholder="Identificación"
         value={cedula}
         onChange={(e) => setCedula(e.target.value)}
       />
       <input
         type="text"
-        placeholder="Telefono"
+        placeholder="Teléfono"
         value={telefono}
         onChange={(e) => setTelefono(e.target.value)}
       />
