@@ -6,6 +6,8 @@ const UserSchema = new mongoose.Schema({
   cedula: { type: String, required: true},
   telefono: { type: String, required: true },
   password: { type: String, required: true },
+  isAdmin: { type: Boolean, default: false },
+
 });
 
 // Middleware para encriptar contraseñas

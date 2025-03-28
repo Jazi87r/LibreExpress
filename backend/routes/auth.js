@@ -17,9 +17,9 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Inicio de sesión
+//inicio de sesion
 router.post('/login', async (req, res) => {
-  const { username, password,isAdmin } = req.body;
+  const { username, password } = req.body; // No necesitas 'isAdmin' aquí, se consulta en la base de datos
   try {
     const user = await User.findOne({ username });
     if (!user) return res.status(404).json({ error: 'Usuario no encontrado' });
@@ -27,8 +27,11 @@ router.post('/login', async (req, res) => {
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) return res.status(401).json({ error: 'Contraseña incorrecta' });
 
-    const token = jwt.sign({ id: user._id}, 'secretKey', { expiresIn: '1h' });
-    res.json({ token });
+    // Devuelve también si el usuario es admin
+    const userType = user.isAdmin ? 'admin' : 'user'; // Suponiendo que 'isAdmin' es parte del modelo User
+
+    const token = jwt.sign({ id: user._id }, 'secretKey', { expiresIn: '1h' });
+    res.json({ token, userType }); // Incluye el tipo de usuario en la respuesta
   } catch (error) {
     res.status(500).json({ error: 'Error al iniciar sesión' });
   }
