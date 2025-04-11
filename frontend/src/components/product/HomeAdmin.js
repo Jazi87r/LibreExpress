@@ -11,7 +11,7 @@ const HomeAdmin = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/authproduct'); // Endpoint para obtener todos los productos
+        const response = await axios.get('http://localhost:5000/authproduct'); // Endpoint para obtener todos los productos
         setProducts(response.data);
       } catch (error) {
         console.error('Error al obtener los productos:', error);

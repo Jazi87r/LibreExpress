@@ -10,7 +10,6 @@ const app = express();
 // Conectar a MongoDB
 connectDB();
 
-app.use('/authproduct', authProduct);
 
 // Middlewares
 app.use(cors());
@@ -18,6 +17,8 @@ app.use(express.json());
 
 // Rutas
 app.use('/auth', authRoutes);
+app.use('/authproduct', authProduct);
+
 
 const PORT = 5000;
 app.listen(PORT, () => {
