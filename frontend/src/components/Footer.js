@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <p>© {new Date().getFullYear()} Libre Express</p>
       <a href="/politica-de-privacidad" className="footer-link">
-        Política de Privacidad
+        Política de Privacidad y Contacto
       </a>
     </footer>
   );
