@@ -6,6 +6,7 @@ const authRoutes = require('./routes/auth');
 const authProduct = require('./routes/authProduct');
 const cartController = require('./controllers/cartController');
 const commentController = require('./controllers/commentController');
+const orderController = require('./controllers/orderController');
 
 const app = express();
 
@@ -29,6 +30,11 @@ app.delete('/cart/:id', cartController.deleteCartItem);
 
 app.get('/comments/:productId', commentController.getComments);
 app.post('/comments/:productId', commentController.addComment);
+
+// Rutas de Orden 
+
+app.post('/orders', orderController.createOrder);
+app.get('/orders', orderController.getOrders);
 
 
 

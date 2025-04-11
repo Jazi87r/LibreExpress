@@ -1,0 +1,77 @@
+.orders-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.orders-container h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.download-button {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.download-button:hover {
+    background-color: #45a049;
+}
+
+.order-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.order-list li {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-list h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.order-list p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.order-list h3 {
+    font-size: 18px;
+    color: #007bff;
+    margin-top: 10px;
+}
+
+.product-list {
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.product-list li {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+}
