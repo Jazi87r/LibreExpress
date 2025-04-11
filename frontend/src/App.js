@@ -6,9 +6,11 @@ import Cart from './components/cart/Cart';import Navbar from './components/Navba
 import Footer from './components/Footer';
 import UserProfile from './components/user/UserProfile';
 import Login from './components/user/Login';
+import Logout from './components/user/Logout';
 import Register from './components/user/Register';
 import HomeAdmin from './components/product/HomeAdmin';
 import Home from './components/product/Home';
+import Orders from './components/cart/Orders';
 import ManageUser from './components/user/ManageUser';
 import ProductDetails from './components/product/ProductDetails';
 import HomeLogin from './components/product/HomeLogin';
@@ -69,7 +71,7 @@ function AppContent() {
           totalPrice,
       };
 
-      fetch('http://localhost:3000/orders', {
+      fetch('http://localhost:5000/orders', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(orderData),
@@ -93,7 +95,7 @@ function AppContent() {
   useEffect(() => {
       const fetchOrders = async () => {
           try {
-              const response = await fetch('http://localhost:3000/orders');
+              const response = await fetch('http://localhost:5000/orders');
               if (response.ok) {
                   const data = await response.json();
                   setOrders(data);
@@ -148,6 +150,8 @@ function AppContent() {
         <Route path="/home" element={<Home  />} />
         <Route path="/homeadmin" element={<HomeAdmin />} />
         <Route path="/manageuser" element={<ManageUser />} />
+        <Route path="/orders" element={<Orders orders={orders} />} />
+        <Route path="/logout" element={<Logout />} />
         <Route path="/politica-de-privacidad" element={<PrivacyPolicy />} />
         <Route path="/userprofile" element={<UserProfile />} />
         <Route path="/product/:productId" element={<ProductDetails onAddToCart={handleAddToCart} />} />
