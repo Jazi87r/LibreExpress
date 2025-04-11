@@ -52,6 +52,7 @@ const Navbar = () => {
           <h1>Panel de Administración</h1>
         </div>
         <ul className="nav-links">
+          <li><Link to="/buscar">Buscar</Link></li>
           <li><Link to="/homeadmin">Dashboard</Link></li>
           <li><Link to="/manageuser">Usuarios</Link></li>
           <li><Link to="/orders">Reportes</Link></li>
