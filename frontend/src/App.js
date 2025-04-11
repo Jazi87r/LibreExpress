@@ -5,10 +5,9 @@ import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Home';
-import HomeAdmin from './components/HomeAdmin';
 import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
-
+import HomeAdmin from './components/product/HomeAdmin';
 
 const App = () => {
   return (
