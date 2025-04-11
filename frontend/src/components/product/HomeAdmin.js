@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importa el hook useNavigate
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import '../../styles/ShowProducts.css'; // Importa los estilos personalizados
+import '../../styles/ShowProducts.css';
 
 const HomeAdmin = () => {
-  const [products, setProducts] = useState([]); // Estado para almacenar los productos
-  const [error, setError] = useState(null); // Estado para manejar errores
-  const navigate = useNavigate(); // Inicializa el hook de navegación
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/authproduct'); // Obtiene todos los productos
+        const response = await axios.get('http://localhost:3000/authproduct'); // Endpoint para obtener todos los productos
         setProducts(response.data);
       } catch (error) {
         console.error('Error al obtener los productos:', error);
@@ -23,7 +23,11 @@ const HomeAdmin = () => {
   }, []);
 
   const handleCreateProduct = () => {
-    navigate('/createproduct'); // Redirige a la ruta de creación de productos
+    navigate('/createproduct'); // Redirigir al formulario de creación
+  };
+
+  const handleEditProduct = (productId) => {
+    navigate(`/editproduct/${productId}`); // Redirigir al formulario de edición con el ID
   };
 
   if (error) {
@@ -51,6 +55,7 @@ const HomeAdmin = () => {
               <th>Precio</th>
               <th>Stock</th>
               <th>Imagen</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -62,6 +67,14 @@ const HomeAdmin = () => {
                 <td>{product.stock}</td>
                 <td>
                   <img src={product.imageUrl} alt={product.name} className="product-image" />
+                </td>
+                <td>
+                  <button
+                    onClick={() => handleEditProduct(product._id)}
+                    className="edit-button"
+                  >
+                    Editar
+                  </button>
                 </td>
               </tr>
             ))}

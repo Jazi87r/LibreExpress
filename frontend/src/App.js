@@ -1,31 +1,47 @@
-// src/App.js
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import axios from 'axios';
 import Navbar from './components/Navbar';
-import Login from './components/Login';
-import Register from './components/Register';
-import Home from './components/Home';
 import Footer from './components/Footer';
-import PrivacyPolicy from './components/PrivacyPolicy';
-import HomeAdmin from './components/product/HomeAdmin';
 
-const App = () => {
+import Login from './components/user/Login';
+import Register from './components/user/Register';
+import HomeAdmin from './components/product/HomeAdmin';
+import Home from './components/product/Home';
+
+import PrivacyPolicy from './components/PrivacyPolicy';
+import { AuthProvider } from './context/AuthContext';
+
+
+function AppContent() {
+  
+
+  
+
   return (
-    <div>
-       <Navbar />
     <Router>
-       <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/homeadmin" element={<HomeAdmin />} />
-          <Route path="/politica-de-privacidad" element={<PrivacyPolicy />} />
-       </Routes>
+      <Navbar />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/home" element={<Home  />} />
+        <Route path="/homeadmin" element={<HomeAdmin />} />
+       
+        <Route path="/politica-de-privacidad" element={<PrivacyPolicy />} />
+
+
+      </Routes>
+      <Footer />
     </Router>
-    <Footer />
-    </div>
-     
   );
-};
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
+  );
+}
 
 export default App;
