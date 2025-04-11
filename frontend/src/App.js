@@ -11,6 +11,8 @@ import Logout from './components/user/Logout';
 import CreateProduct from './components/product/CreateProduct';
 import HomeAdmin from './components/product/HomeAdmin';
 import Home from './components/product/Home';
+
+import EditProduct from './components/product/EditProduct';
 import Orders from './components/cart/Orders';
 import ManageUser from './components/user/ManageUser';
 import ProductDetails from './components/product/ProductDetails';
@@ -149,6 +151,7 @@ function AppContent() {
         <Route path="/home" element={<Home onAddToCart={handleAddToCart} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home  />} />
+        <Route path="/editproduct/:productId" element={<EditProduct />} />
         <Route path="/homeadmin" element={<HomeAdmin />} />
         <Route path="/manageuser" element={<ManageUser />} />
         <Route path="/orders" element={<Orders orders={orders} />} />
