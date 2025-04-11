@@ -60,3 +60,9 @@
 .registerButton:hover {
   background-color: #218838;
 }
+.welcome {
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #3B6790;
+  margin-bottom: 10px;
+}
