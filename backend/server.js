@@ -4,6 +4,8 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const authProduct = require('./routes/authProduct');
+const cartController = require('./controllers/cartController');
+
 
 const app = express();
 
@@ -18,6 +20,14 @@ app.use(express.json());
 // Rutas
 app.use('/auth', authRoutes);
 app.use('/authproduct', authProduct);
+
+
+// Rutas del carrito
+app.get('/cart', cartController.getCartItems);
+app.post('/cart', cartController.createCart);
+app.delete('/cart/:id', cartController.deleteCartItem);
+
+
 
 
 const PORT = 5000;
