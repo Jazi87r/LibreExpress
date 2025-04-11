@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
+import UserProfile from './components/user/UserProfile';
 import Login from './components/user/Login';
 import Register from './components/user/Register';
 import HomeAdmin from './components/product/HomeAdmin';
@@ -28,7 +28,7 @@ function AppContent() {
         <Route path="/homeadmin" element={<HomeAdmin />} />
        
         <Route path="/politica-de-privacidad" element={<PrivacyPolicy />} />
-
+        <Route path="/userprofile" element={<UserProfile />} />
 
       </Routes>
       <Footer />
