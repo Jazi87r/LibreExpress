@@ -9,6 +9,7 @@ import Register from './components/user/Register';
 import HomeAdmin from './components/product/HomeAdmin';
 import Home from './components/product/Home';
 import ManageUser from './components/user/ManageUser';
+import ProductDetails from './components/product/ProductDetails';
 import HomeLogin from './components/product/HomeLogin';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import { AuthProvider } from './context/AuthContext';
@@ -52,7 +53,7 @@ function AppContent() {
         <Route path="/manageuser" element={<ManageUser />} />
         <Route path="/politica-de-privacidad" element={<PrivacyPolicy />} />
         <Route path="/userprofile" element={<UserProfile />} />
-
+        <Route path="/product/:productId" element={<ProductDetails onAddToCart={handleAddToCart} />} />
       </Routes>
       <Footer />
     </Router>
