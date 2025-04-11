@@ -81,4 +81,20 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// Ruta para buscar productos por nombre
+router.get('/buscar', async (req, res) => {
+  const { nombre } = req.query;
+
+  try {
+    const productos = await Product.find({
+      name: { $regex: nombre, $options: 'i' }, // Búsqueda insensible a mayúsculas
+    });
+
+    res.status(200).json(productos);
+  } catch (error) {
+    res.status(500).json({ message: 'Error al buscar productos.', error });
+  }
+});
+
+
 module.exports = router;

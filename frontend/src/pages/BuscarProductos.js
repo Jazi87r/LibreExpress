@@ -9,7 +9,7 @@ const BuscarProductos = () => {
     if (!busqueda.trim()) return;
 
     try {
-      const res = await axios.get(`http://localhost:5000/api/productos/buscar?nombre=${busqueda}`);
+      const res = await axios.get(`http://localhost:5000/authproduct/buscar?nombre=${busqueda}`);
       setResultados(res.data);
     } catch (error) {
       console.error('Error al buscar productos:', error);
@@ -24,19 +24,21 @@ const BuscarProductos = () => {
         placeholder="Nombre del producto"
         value={busqueda}
         onChange={(e) => setBusqueda(e.target.value)}
-        style={{ padding: '8px', marginRight: '10px' }}
       />
       <button onClick={handleBuscar}>Buscar</button>
 
       <div style={{ marginTop: '20px' }}>
+        <h3>Resultados:</h3>
         {resultados.length > 0 ? (
           <ul>
             {resultados.map((producto) => (
-              <li key={producto._id}>{producto.nombre}</li>
+              <li key={producto._id}>
+                <strong>{producto.name}</strong> - ${producto.price}
+              </li>
             ))}
           </ul>
         ) : (
-          busqueda && <p>No se encontraron productos.</p>
+          <p>No hay resultados</p>
         )}
       </div>
     </div>
