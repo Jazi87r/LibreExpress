@@ -1,0 +1,91 @@
+
+/* Contenedor Principal */
+.show-products-container {
+    width: 100%;
+    max-width: 1400px; /* Aumenta el ancho máximo */
+    margin: 20px auto; /* Reduce el margen superior */
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    overflow-x: auto; /* Agrega desplazamiento horizontal si el contenido supera el ancho */
+  }
+  
+  /* Encabezados */
+  .show-products-container h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+    font-size: 26px; /* Aumenta ligeramente el tamaño del texto */
+  }
+  
+  /* Mensajes */
+  .error-message {
+    color: #dc3545;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .no-products {
+    text-align: center;
+    color: #555555;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  /* Tabla de Productos */
+  .products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px; /* Ajusta el tamaño del texto en la tabla */
+  }
+  
+  .products-table th,
+  .products-table td {
+    border: 1px solid #dddddd;
+    padding: 12px; /* Aumenta el espacio interno de las celdas */
+    text-align: center;
+    vertical-align: middle; /* Asegura que el texto esté centrado verticalmente */
+  }
+  
+  .products-table th {
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .products-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .products-table tr:hover {
+    background-color: #e6f7ff;
+  }
+  
+  /* Imágenes */
+  .product-image {
+    width: 100px; /* Aumenta el tamaño para mejor visibilidad */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  /* Responsividad */
+  @media screen and (max-width: 768px) {
+    .products-table th,
+    .products-table td {
+      font-size: 14px; /* Reduce el tamaño de texto en pantallas pequeñas */
+      padding: 8px;
+    }
+  
+    .product-image {
+        width: 10px; /* Establece un ancho fijo */
+        height: 10px; /* Establece una altura fija */
+       
+      }
+      
+  }
+   
