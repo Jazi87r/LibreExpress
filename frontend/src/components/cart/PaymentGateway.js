@@ -9,7 +9,7 @@ const PaymentGateway = ({ totalPrice, onCompletePayment }) => {
             alert('Por favor, selecciona un método de pago.');
             return;
         }
-        alert(`Pago realizado con éxito utilizando ${selectedMethod}.`);
+        alert(Pago realizado con éxito utilizando ${selectedMethod}.);
         onCompletePayment(); // Callback para finalizar el pago y limpiar el carrito
     };
 
@@ -53,4 +53,4 @@ const PaymentGateway = ({ totalPrice, onCompletePayment }) => {
     );
 };
 
-export default PaymentGateway;
+export default PaymentGateway;
