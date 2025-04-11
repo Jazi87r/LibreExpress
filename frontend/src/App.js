@@ -9,7 +9,7 @@ import Register from './components/user/Register';
 import HomeAdmin from './components/product/HomeAdmin';
 import Home from './components/product/Home';
 import ManageUser from './components/user/ManageUser';
-
+import HomeLogin from './components/product/HomeLogin';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import { AuthProvider } from './context/AuthContext';
 
@@ -24,6 +24,7 @@ function AppContent() {
       <Navbar />
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/" element={<HomeLogin />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home  />} />
         <Route path="/homeadmin" element={<HomeAdmin />} />
