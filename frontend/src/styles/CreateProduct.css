@@ -1,0 +1,101 @@
+/* Contenedor principal */
+.create-product-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Encabezados */
+  .create-product-container h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  /* Mensajes */
+  .success-message {
+    color: #28a745;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Formulario */
+  .create-product-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333333;
+  }
+  
+  .create-product-form input,
+  .create-product-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .create-product-form textarea {
+    resize: none; /* Evita redimensionar el área de texto */
+    min-height: 80px; /* Altura mínima del área de texto */
+  }
+  
+  .create-product-form input:focus,
+  .create-product-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* Botones */
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .buttons button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Botón para guardar */
+  .buttons button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .buttons button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Botón para cancelar */
+  .cancel-button {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .cancel-button:hover {
+    background-color: #c82333;
+  }
+  

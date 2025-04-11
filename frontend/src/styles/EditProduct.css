@@ -1,0 +1,78 @@
+.edit-product-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-product-container h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.edit-product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edit-product-form label {
+    font-size: 16px;
+    color: #555;
+}
+
+.edit-product-form input,
+.edit-product-form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.edit-product-form textarea {
+    resize: none;
+    height: 80px;
+}
+
+.update-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.update-button:hover {
+    background-color: #45a049;
+}
+
+.delete-button {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #c53030;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}

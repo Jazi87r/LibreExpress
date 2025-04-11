@@ -6,10 +6,13 @@ import Cart from './components/cart/Cart';import Navbar from './components/Navba
 import Footer from './components/Footer';
 import UserProfile from './components/user/UserProfile';
 import Login from './components/user/Login';
-import Logout from './components/user/Logout';
 import Register from './components/user/Register';
+import Logout from './components/user/Logout';
+import CreateProduct from './components/product/CreateProduct';
 import HomeAdmin from './components/product/HomeAdmin';
 import Home from './components/product/Home';
+
+import EditProduct from './components/product/EditProduct';
 import Orders from './components/cart/Orders';
 import ManageUser from './components/user/ManageUser';
 import ProductDetails from './components/product/ProductDetails';
@@ -142,12 +145,13 @@ function AppContent() {
                   }
               />
         
-        
+        <Route path="/createproduct" element={<CreateProduct />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<HomeLogin />} />
         <Route path="/home" element={<Home onAddToCart={handleAddToCart} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home  />} />
+        <Route path="/editproduct/:productId" element={<EditProduct />} />
         <Route path="/homeadmin" element={<HomeAdmin />} />
         <Route path="/manageuser" element={<ManageUser />} />
         <Route path="/orders" element={<Orders orders={orders} />} />
