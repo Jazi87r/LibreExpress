@@ -13,7 +13,7 @@ import HomeLogin from './components/product/HomeLogin';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import { AuthProvider } from './context/AuthContext';
 import { v4 as uuidv4 } from 'uuid';
-
+import BuscarProductos from './pages/BuscarProductos';
 
 function AppContent() {
   const [cartItems, setCartItems] = useState([]);
@@ -52,7 +52,7 @@ function AppContent() {
         <Route path="/manageuser" element={<ManageUser />} />
         <Route path="/politica-de-privacidad" element={<PrivacyPolicy />} />
         <Route path="/userprofile" element={<UserProfile />} />
-
+        <Route path="/buscar" element={<BuscarProductos />} />
       </Routes>
       <Footer />
     </Router>
