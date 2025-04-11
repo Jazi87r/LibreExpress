@@ -5,7 +5,7 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const authProduct = require('./routes/authProduct');
 const cartController = require('./controllers/cartController');
-
+const commentController = require('./controllers/commentController');
 
 const app = express();
 
@@ -27,6 +27,8 @@ app.get('/cart', cartController.getCartItems);
 app.post('/cart', cartController.createCart);
 app.delete('/cart/:id', cartController.deleteCartItem);
 
+app.get('/comments/:productId', commentController.getComments);
+app.post('/comments/:productId', commentController.addComment);
 
 
 
