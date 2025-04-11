@@ -36,6 +36,7 @@ const Login = () => {
 
   return (
     <div className="loginContainer">
+      <h1 className='welcome'>Bienvenidos a Libre Express</h1>
       <h1 className='title'>Iniciar Sesión</h1>
       <input
         className='camtex'
