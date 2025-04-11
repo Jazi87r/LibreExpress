@@ -18,7 +18,7 @@ const EditProduct = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/authproduct/${productId}`); // Obtener los detalles del producto
+        const response = await axios.get(`http://localhost:5000/authproduct/${productId}`); // Obtener los detalles del producto
         setProduct(response.data);
       } catch (error) {
         console.error('Error al obtener el producto:', error);
@@ -38,7 +38,7 @@ const EditProduct = () => {
     e.preventDefault();
 
     try {
-      await axios.put(`http://localhost:3000/authproduct/${productId}`, product); // Actualizar el producto
+      await axios.put(`http://localhost:5000/authproduct/${productId}`, product); // Actualizar el producto
       alert('Producto actualizado exitosamente.');
       navigate('/homeadmin'); // Redirigir al listado de productos
     } catch (error) {
@@ -52,7 +52,7 @@ const EditProduct = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:3000/authproduct/${productId}`); // Eliminar el producto
+      await axios.delete(`http://localhost:5000/authproduct/${productId}`); // Eliminar el producto
       alert('Producto eliminado exitosamente.');
       navigate('/homeadmin'); // Redirigir al listado de productos
     } catch (error) {

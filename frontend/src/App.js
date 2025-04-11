@@ -31,7 +31,7 @@ function AppContent() {
       const fetchUserData = async () => {
           try {
               const token = localStorage.getItem('token'); // Obtener el token de sesión
-              const response = await axios.get('http://localhost:3000/auth/user-info', {
+              const response = await axios.get('http://localhost:5000/auth/user-info', {
                   headers: { Authorization: token },
               });
               setUserData(response.data); // Guardar la información del usuario en el estado

@@ -22,7 +22,7 @@ const CreateProduct = () => {
 
     try {
       // Enviar los datos del formulario a la nueva ruta base "/authproduct/create"
-      const response = await axios.post('http://localhost:3000/authproduct/create', formData);
+      const response = await axios.post('http://localhost:5000/authproduct/create', formData);
       setMessage(response.data.message); // Muestra mensaje de éxito
       setFormData({ name: '', description: '', price: '', stock: '', imageUrl: '' }); // Limpia el formulario
     } catch (error) {
